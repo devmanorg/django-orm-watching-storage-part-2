@@ -39,19 +39,15 @@ class Visit(models.Model):
         seconds = visit_time.total_seconds()
         hours = seconds // 3600
 
-        int(hours)
-
         minutes = (seconds % 3600) // 60
-        int(minutes)
+
         return f"{int(hours)}ч {int(minutes)}мин"
 
     def is_visit_long(self):
-        minutes = 60
-        duration = self.get_duration()
-        return duration // 60 > minutes
-
-    def is_visit_long_now(self):
         now = datetime.datetime.now(timezone.utc)
         minutes = 60
-        duration = (now - localtime(self.entered_at)).total_seconds()
+        if self.entered_at == None:
+            duration = (now - localtime(self.entered_at)).total_seconds()
+        else:
+            duration = self.get_duration()
         return duration // 60 > minutes
