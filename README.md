@@ -13,7 +13,17 @@ Python3 должен быть уже установлен,
 ```python
 pip install -r requirements.txt
 ```
-
+## Переменные окружения
+Файл .env      
+В нём надо указать данные для файла `settings.py`.
+```
+ENGINE=example
+HOST=example
+PORT=example
+NAME=example
+USER=example
+PASSWORD=example
+```
 
 #### Для запуска сайта
 ```
