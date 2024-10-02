@@ -48,7 +48,7 @@ class Visit(models.Model):
         minutes = 60
 
         if self.leaved_at == None:
-            duration = (localtime(self.leaved_at) - localtime(self.entered_at)).total_seconds()
+            localtime(self.leaved_at) - localtime(self.entered_at).total_seconds()
 
         if self.entered_at == None:
             duration = (now - localtime(self.entered_at)).total_seconds()
