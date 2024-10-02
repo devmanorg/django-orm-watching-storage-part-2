@@ -23,6 +23,7 @@ PORT=example
 NAME=example
 USER=example
 PASSWORD=example
+ALLOWED_HOSTS=example
 ```
 
 #### Для запуска сайта
