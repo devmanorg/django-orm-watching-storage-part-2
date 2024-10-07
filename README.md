@@ -23,6 +23,7 @@ PORT=example
 NAME=example
 USER=example
 PASSWORD=example
+DEBUG=example
 ALLOWED_HOSTS=example
 ```
 
