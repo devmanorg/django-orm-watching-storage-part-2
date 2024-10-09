@@ -4,24 +4,24 @@ from dotenv import load_dotenv
 load_dotenv()
 DATABASES = {
     "default": {
-        "ENGINE": os.environ["ENGINE"],
-        "HOST": os.environ["HOST"],
-        "PORT": os.environ["PORT"],
-        "NAME": os.environ["NAME"],
-        "USER": os.environ["USER"],
-        "PASSWORD": os.environ["PASSWORD"],
+        "ENGINE": os.environ["DB_ENGINE"],
+        "HOST": os.environ["DB_HOST"],
+        "PORT": os.environ["DB_PORT"],
+        "NAME": os.environ["DB_NAME"],
+        "USER": os.environ["DB_USER"],
+        "PASSWORD": os.environ["DB_PASSWORD"],
     }
 }
 
 INSTALLED_APPS = ["datacenter"]
 
-SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = os.environ["DB_SECRET_KEY"]
 
-DEBUG = True
+DEBUG = os.environ["DB_DEBUG"]
 
 ROOT_URLCONF = "project.urls"
 
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
+ALLOWED_HOSTS = os.environ['DB_ALLOWED_HOSTS']
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
