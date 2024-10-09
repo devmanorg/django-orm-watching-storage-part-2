@@ -17,18 +17,18 @@ pip install -r requirements.txt
 Файл .env      
 В нём надо указать данные для файла `settings.py`.
 ```
-ENGINE=example
-HOST=example
-PORT=example
-NAME=example
-USER=example
-PASSWORD=example
-DEBUG=example
-ALLOWED_HOSTS=example
+DB_ENGINE=example
+DB_HOST=example
+DB_PORT=example
+DB_NAME=example
+DB_USER=example
+DB_PASSWORD=example
+DB_DEBUG=example
+DB_ALLOWED_HOSTS=example
 ```
 В файле settings.py есть настройка DEBUG, она включает отладочный режим работы сайта. На локальной машине она обычно равна True, а на сервере — False.
 ```
-DEBUG=example
+DB_DEBUG=example
 ```
 #### Для запуска сайта
 ```
