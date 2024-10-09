@@ -26,7 +26,10 @@ PASSWORD=example
 DEBUG=example
 ALLOWED_HOSTS=example
 ```
-
+В файле settings.py есть настройка DEBUG, она включает отладочный режим работы сайта. На локальной машине она обычно равна True, а на сервере — False.
+```
+DEBUG=example
+```
 #### Для запуска сайта
 ```
 python main
