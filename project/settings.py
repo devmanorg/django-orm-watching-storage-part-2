@@ -5,24 +5,24 @@ from environs import Env
 env = Env()
 DATABASES = {
     'default': {
-        'ENGINE': env('DB_ENGINE'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
+        'ENGINE': env('SETTING_ENGINE'),
+        'HOST': env('SETTING_HOST'),
+        'PORT': env('SETTING_PORT'),
+        'NAME': env('SETTING_NAME'),
+        'USER': env('SETTING_USER'),
+        'PASSWORD': env('SETTING_PASSWORD'),
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = env('DB_SECRET_KEY')
+SECRET_KEY = env('SETTING_SECRET_KEY')
 
-DEBUG = env.bool('DB_DEBUG')
+DEBUG = env.bool('SETTING_DEBUG')
 
-ROOT_URLCONF = env('DB_ROOT_URLCONF')
+ROOT_URLCONF = env('SETTING_ROOT_URLCONF')
 
-ALLOWED_HOSTS = env.list('DB_ALLOWED_HOSTS')
+ALLOWED_HOSTS = env.list('SETTING_ALLOWED_HOSTS')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
