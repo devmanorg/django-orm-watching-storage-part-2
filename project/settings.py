@@ -15,13 +15,13 @@ DATABASES = {
 
 INSTALLED_APPS = ["datacenter"]
 
-SECRET_KEY = os.environ["DB_SECRET_KEY"]
+SECRET_KEY = os.environ["SECRET_KEY"]
 
-DEBUG = os.environ["DB_DEBUG"]
+DEBUG = False
 
 ROOT_URLCONF = "project.urls"
 
-ALLOWED_HOSTS = os.environ['DB_ALLOWED_HOSTS']
+ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
