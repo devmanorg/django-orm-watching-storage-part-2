@@ -23,13 +23,10 @@ DB_PORT=example
 DB_NAME=example
 DB_USER=example
 DB_PASSWORD=example
-DB_DEBUG=example
-DB_ALLOWED_HOSTS=example
+ALLOWED_HOSTS=example
+SECRET_KEY=example
 ```
-В файле settings.py есть настройка DEBUG, она включает отладочный режим работы сайта. На локальной машине она обычно равна True, а на сервере — False.
-```
-DB_DEBUG=example
-```
+
 #### Для запуска сайта
 ```
 python main
