@@ -5,22 +5,22 @@ from environs import Env
 env = Env()
 DATABASES = {
     'default': {
-        'ENGINE': env('SETTING_ENGINE'),
-        'HOST': env('SETTING_HOST'),
-        'PORT': env('SETTING_PORT'),
-        'NAME': env('SETTING_NAME'),
-        'USER': env('SETTING_USER'),
-        'PASSWORD': env('SETTING_PASSWORD'),
+        'ENGINE': env.str('SETTING_ENGINE'),
+        'HOST': env.str('SETTING_HOST'),
+        'PORT': env.str('SETTING_PORT'),
+        'NAME': env.str('SETTING_NAME'),
+        'USER': env.str('SETTING_USER'),
+        'PASSWORD': env.str('SETTING_PASSWORD'),
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = env('SETTING_SECRET_KEY')
+SECRET_KEY = env.str('SETTING_SECRET_KEY')
 
 DEBUG = env.bool('SETTING_DEBUG')
 
-ROOT_URLCONF = env('SETTING_ROOT_URLCONF')
+ROOT_URLCONF = env.str('SETTING_ROOT_URLCONF')
 
 ALLOWED_HOSTS = env.list('SETTING_ALLOWED_HOSTS')
 
