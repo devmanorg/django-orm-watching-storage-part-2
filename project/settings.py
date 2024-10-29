@@ -5,24 +5,24 @@ from environs import Env
 env = Env()
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'checkpoint.devman.org',
-        'PORT': '5434',
-        'NAME': 'checkpoint',
-        'USER': 'guard',
-        'PASSWORD': 'osim5',
+        'ENGINE': env('SETTING_ENGINE'),
+        'HOST': env('SETTING_HOST'),
+        'PORT': env('SETTING_PORT'),
+        'NAME': env('SETTING_NAME'),
+        'USER': env('SETTING_USER'),
+        'PASSWORD': env('SETTING_PASSWORD'),
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = env('SETTING_SECRET_KEY')
 
-DEBUG = True
+DEBUG = env('SETTING_DEBUG')
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = env('SETTING_ROOT_URLCONF')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [env('SETTING_ALLOWED_HOSTS')]
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
