@@ -14,7 +14,7 @@ DATABASES = {
     }
 }
 
-NSTALLED_APPS = ['datacenter']
+INSTALLED_APPS = ['datacenter']
 
 SECRET_KEY = 'REPLACE_ME'
 
