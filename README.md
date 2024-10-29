@@ -15,6 +15,10 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 
+-'SETTING_ENGINE' - ссылка на движок сайта
+-'SETTING_HOST' - ссылка на сайт dvmn.org
+-
+
 ### Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
