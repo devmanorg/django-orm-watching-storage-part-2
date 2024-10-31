@@ -15,9 +15,15 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 
--'SETTING_ENGINE' - ссылка на движок сайта
--'SETTING_HOST' - ссылка на сайт dvmn.org
--
+- 'SETTING_ENGINE' - ссылка на движок базы данных
+- 'SETTING_HOST' - ссылка на сервер БД
+- 'SETTING_PORT' - порт сервера БД
+- 'SETTING_NAME' - имя сервера БД
+- 'SETTING_USER' - имя пользователя, который имеет доступ к БД
+- 'SETTING_PASSWORD' - пароль от БД
+- 'SETTING_SECRET_KEY' - ключ доступа к БД
+- 'SETTING_ALLOWED_HOSTS' - список адресов всех доменов, которые могут запускать проект
+- 'SETTING_DEBUG' - активация/деактивация режима отладки
 
 ### Цель проекта
 
