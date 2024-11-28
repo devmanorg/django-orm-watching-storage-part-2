@@ -3,6 +3,7 @@ from environs import Env
 
 
 env = Env()
+env.read_env()
 DATABASES = {
     'default': {
         'ENGINE': env.str('DB_ENGINE'),
