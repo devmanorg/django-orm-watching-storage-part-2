@@ -1,13 +1,8 @@
-from datacenter.models import Visit
 from django.utils import timezone
-from datetime import timedelta
-
 
 
 SECONDS_IN_MINUTE = 60
 SECONDS_IN_HOUR = 3600
-
-visit = Visit(entered_at=timezone.now(), leaved_at=None)
 
 
 def get_duration(visit):
@@ -27,5 +22,5 @@ def format_duration(duration):
 
 def is_visit_long(visit, minutes=60):
     duration = get_duration(visit)
-    return duration > timedelta(minutes=minutes)
+    return duration.total_seconds > minutes * SECONDS_IN_MINUTE
 
