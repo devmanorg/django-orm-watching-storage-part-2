@@ -6,8 +6,12 @@ SECONDS_IN_HOUR = 3600
 
 
 def get_duration(visit):
-    current_time = timezone.localtime()
-    duration = (visit.leaved_at or current_time) - visit.entered_at
+    entered_at_local = timezone.localtime(visit.entered_at)
+    leaved_at_local = timezone.localtime(visit.leaved_at) \
+        if visit.leaved_at \
+        else timezone.localtime()
+
+    duration = leaved_at_local - entered_at_local
     return duration
 
 
