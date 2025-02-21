@@ -20,7 +20,19 @@
 
 - **STORAGE_OPENING_HOURS**: Часы работы хранилища в формате `HH:MM-HH:MM`. Например: `09:00-18:00`. Это значение может использоваться для проверки допустимости времени входа.
 
-Установите зависимости проекта, используя pip (или pip3, если у вас конфликт с Python2):
+### Пример файла `.env`
+Создайте файл `.env` в корне вашего проекта и добавьте в него следующие строки:
+
+```plaintext
+DATABASE_URL=postgres://USER:PASSWORD@localhost:5432/DBNAME
+SECRET_KEY=ваш_секретный_ключ
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1,yourdomain.com
+VISIT_DURATION_LIMIT=60
+STORAGE_OPENING_HOURS=09:00-18:00
+
+## Установите зависимостей проекта 
+Используя pip (или pip3, если у вас конфликт с Python2):
 
 ```bash
 pip install -r requirements.txt
