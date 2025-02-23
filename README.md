@@ -20,16 +20,35 @@
 
 - **STORAGE_OPENING_HOURS**: Часы работы хранилища в формате `HH:MM-HH:MM`. Например: `09:00-18:00`. Это значение может использоваться для проверки допустимости времени входа.
 
+### Дополнительные переменные окружения
+Также необходимо указать следующие переменные окружения, которые используются для подключения к базе данных:
+
+DATABASE_HOST: Хост, на котором развернута база данных. Обычно это localhost, если база данных находится на том же сервере, что и приложение. Например: localhost.
+
+DATABASE_PORT: Порт, на котором работает база данных. По умолчанию для PostgreSQL это 5432, но в вашем случае используется 5434. Например: 5434.
+
+DATABASE_NAME: Имя базы данных, к которой ваше приложение будет подключаться. Например: bank_storage.
+
+DATABASE_USER: Имя пользователя для подключения к базе данных. Например: db_user.
+
+DATABASE_PASSWORD: Пароль для подключения к базе данных. Убедитесь, что он хранится в секрете. Например: secure_password.
+
 ### Пример файла `.env`
 Создайте файл `.env` в корне вашего проекта и добавьте в него следующие строки:
 
 ```plaintext
 DATABASE_URL=postgres://USER:PASSWORD@localhost:5432/DBNAME
+DATABASE_HOST=localhost
+DATABASE_PORT=5434
+DATABASE_NAME=bank_storage
+DATABASE_USER=db_user
+DATABASE_PASSWORD=secure_password
 SECRET_KEY=ваш_секретный_ключ
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1,yourdomain.com
 VISIT_DURATION_LIMIT=60
 STORAGE_OPENING_HOURS=09:00-18:00
+
 
 ## Установите зависимостей проекта 
 Используя pip (или pip3, если у вас конфликт с Python2):
