@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Passcard(models.Model):
     is_active = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now=True)

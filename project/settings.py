@@ -1,25 +1,29 @@
 import os
+import environ
+
+
+env = environ.Env()
+environ.Env.read_env()
+
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env.bool('DEBUG', default=False)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '',
-        'PORT': '',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
+        'HOST': env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT'),
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
-
-DEBUG = True
-
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost'])
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,3 +45,5 @@ TIME_ZONE = 'Europe/Moscow'
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+print("Loading environment variables from .env")
